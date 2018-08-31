@@ -14,4 +14,3 @@ angular.
             otherwise('/phones');
     }
 ]);
-//# sourceMappingURL=app.config.js.map

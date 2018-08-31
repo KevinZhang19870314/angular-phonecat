@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,10 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { UpgradeModule } from '@angular/upgrade/static';
-var AppModule = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
+var platform_browser_1 = require("@angular/platform-browser");
+var static_1 = require("@angular/upgrade/static");
+var http_1 = require("@angular/http");
+var phone_service_1 = require("./core/phone/phone.service");
+var phone_list_component_1 = require("./phone-list/phone-list.component");
+var ajs_upgraded_providers_1 = require("./ajs-upgraded-providers");
+var phone_detail_component_1 = require("./phone-detail/phone-detail.component");
+var checkmark_pipe_1 = require("./core/checkmark/checkmark.pipe");
+var AppModule = /** @class */ (function () {
     function AppModule(upgrade) {
         this.upgrade = upgrade;
     }
@@ -18,15 +27,29 @@ var AppModule = (function () {
         this.upgrade.bootstrap(document.documentElement, ['phonecatApp']);
     };
     AppModule = __decorate([
-        NgModule({
+        core_1.NgModule({
             imports: [
-                BrowserModule,
-                UpgradeModule
+                platform_browser_1.BrowserModule,
+                static_1.UpgradeModule,
+                http_1.HttpModule,
+                forms_1.FormsModule,
             ],
+            declarations: [
+                phone_list_component_1.PhoneListComponent,
+                phone_detail_component_1.PhoneDetailComponent,
+                checkmark_pipe_1.CheckmarkPipe
+            ],
+            providers: [
+                phone_service_1.Phone,
+                ajs_upgraded_providers_1.routeParamsProvider
+            ],
+            entryComponents: [
+                phone_list_component_1.PhoneListComponent,
+                phone_detail_component_1.PhoneDetailComponent
+            ]
         }),
-        __metadata("design:paramtypes", [UpgradeModule])
+        __metadata("design:paramtypes", [static_1.UpgradeModule])
     ], AppModule);
     return AppModule;
 }());
-export { AppModule };
-//# sourceMappingURL=app.module.js.map
+exports.AppModule = AppModule;

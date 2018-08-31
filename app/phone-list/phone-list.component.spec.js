@@ -1,6 +1,8 @@
 'use strict';
 describe('phoneList', function () {
+    // Load the module that contains the `phoneList` component before each test
     beforeEach(angular.mock.module('phoneList'));
+    // Test the controller
     describe('PhoneListController', function () {
         var $httpBackend, ctrl;
         beforeEach(inject(function ($componentController, _$httpBackend_) {
@@ -20,4 +22,3 @@ describe('phoneList', function () {
         });
     });
 });
-//# sourceMappingURL=phone-list.component.spec.js.map

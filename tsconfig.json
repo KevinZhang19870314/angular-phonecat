@@ -2,19 +2,19 @@
     "compileOnSave": true,
     "compilerOptions": {
         // "outDir": "dist",
-        "experimentalDecorators": true,
-        "sourceMap": true,
+        "sourceMap": false,
         "strict": true,
-        "module": "es2015",
+        "module": "commonjs",
         "moduleResolution": "node",
         "target": "es5",
-        "removeComments": true,
+        "removeComments": false,
         "noImplicitAny": false,
         "emitDecoratorMetadata": true,
-        "skipLibCheck": true
-        // "typeRoots": [
-        //     "node_modules/@types"
-        // ]
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "typeRoots": [
+            "node_modules/@types"
+        ]
     },
     "include": [
         "app/**/*"

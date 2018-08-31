@@ -6,4 +6,3 @@ describe('checkmark', function () {
         expect(checkmarkFilter(false)).toBe('\u2718');
     }));
 });
-//# sourceMappingURL=checkmark.filter.spec.js.map

@@ -38,4 +38,3 @@ angular.
         };
     }
 });
-//# sourceMappingURL=app.animations.js.map
